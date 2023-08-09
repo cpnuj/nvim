@@ -1,8 +1,11 @@
 require('plugins')
 require('mason-config')
 require('gopls')
+require("lua_ls")
+require('clangd')
 require('code-completion')
-require('file-finder')
+require('keymaps')
+require('dap-config')
 
 local set = vim.opt -- set options
 set.tabstop = 4
@@ -12,12 +15,12 @@ set.expandtab = true
 set.cursorline = true
 set.nu = true
 
-vim.o.background = "light" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme moonfly]])
 
 require('lualine').setup {
     options = {
-        theme  = 'gruvbox_light',
+        theme  = 'nord',
         section_separators = '',
         component_separators = ''
     },
@@ -30,3 +33,17 @@ require('lualine').setup {
         lualine_z = {'location'},
     }
 }
+
+require('telescope').setup{
+    defaults = {
+        layout_config = {
+            bottom_pane = {
+                height = 25,
+                preview_cutoff = 120,
+                prompt_position = "bottom"
+            },
+        },
+        layout_strategy = 'bottom_pane',
+    },
+}
+

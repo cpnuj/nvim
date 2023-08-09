@@ -7,7 +7,7 @@ vim.opt.completeopt = {'menuone', 'noselect', 'noinsert', 'preview'}
 vim.opt.shortmess = vim.opt.shortmess + { c = true}
 
 local cmp = require'cmp'
-cmp.setup({ 
+cmp.setup({
   -- Configurations will go here
 
   mapping = {
@@ -36,7 +36,7 @@ cmp.setup({
   sources = {
     { name = 'path' },
     { name = 'nvim_lsp', keyword_length = 3 },
-    { name = 'nvim_lsp_signature_help'}, 
+    { name = 'nvim_lsp_signature_help'},
     { name = 'nvim_lua', keyword_length = 2},
     { name = 'buffer', keyword_length = 2 },
     { name = 'vsnip', keyword_length = 2 },
