@@ -15,6 +15,8 @@ vim.keymap.set('v', '<C-s>', rg_visual_mode, {})
 vim.keymap.set('n', '<leader>gr', ':lua vim.lsp.buf.references()<CR>', {})
 -- rename
 vim.keymap.set('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>', {})
+-- diagnostic
+vim.keymap.set('n', '<leader>dg', ':lua vim.diagnostic.open_float()<CR>', {})
 
 -- debug keymaps
 vim.keymap.set('n', '<C-b>', ':lua require"dap".toggle_breakpoint()<CR>', {})
